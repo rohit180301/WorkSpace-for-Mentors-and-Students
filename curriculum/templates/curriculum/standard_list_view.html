@@ -9,12 +9,12 @@
     <div class="row d-flex justify-content-center text-center">
       <div class="col-md-10 text-white">
         <!-- heading -->
-        <h2 class="display-4 font-weight-bold  p-5 " style="color:#ff5722;" > Standards </h2>
+        <h2 class="display-4 font-weight-bold  p-5 " style="color:#ff5722;" > Skills </h2>
         <div class="row d-flex justify-content-center text-center">
           <ul class="breadcrumb">
             <li><a href="{% url 'index' %}">Home</a></li>
             <li><a href="{% url 'curriculum:standard_list' %}">Curriculum</a></li>
-            <li class="disabled-text">Standards</li>
+            <li class="disabled-text"></li>
           </ul>
         </div>
 
@@ -33,12 +33,66 @@
 <section id="best-features" class="text-center">
               <h2 class="mb-5 mt-5 font-weight-bold" style="color:#ff5722;">Dive Into Learning</h2>
               <!-- class row for description-->
-              <div class="row d-flex justify-content-center mb-4">
-                <!-- class column -->
-                <div class="col-md-8">
-                  <p class="grey-text"></p>
-                </div>
-              </div>
+
+<!-- Search box starts -->
+      <head>
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+          <script>
+
+               function checkInput() {
+               var query = document.getElementById('qwerty').value;
+               window.find(query);
+               return true;
+               }
+           </script>
+
+           <style >
+            .buttonIn {
+            position: relative;
+            margin-bottom:10px;
+            }
+            input {
+              margin: 0px;
+              padding:5px;
+              width: 100%;
+              outline: none;
+              height: 33px;
+              border-radius: 3px;
+              border: 3px solid #00B4CC;
+            }
+            .searchTerm:focus {
+              color: #00B4CC;
+            }
+            button {
+              position: absolute;
+              top: 0px;
+              border-radius: 3px;
+              right: 0px;
+              z-index: 2;
+              border: none;
+              top: 2px;
+              height: 30.5px;
+              cursor: pointer;
+              color: white;
+              background-color: #1e90ff;
+              transform: translateX(2px);
+              margin-right:3.8px;
+            }
+          </style>
+
+    </head>
+
+    <body>
+
+       <div class="buttonIn">
+           <input type="text" id="qwerty" class="searchTerm" placeholder="What are you looking for?">
+           <button onclick="checkInput()" id="clear">Search</button>
+         </div>
+   </body>
+<!-- Search box ends  -->
+<br>
               <!-- class row2 for cards -->
               <div class="row">
                       {% for standard in standards %}

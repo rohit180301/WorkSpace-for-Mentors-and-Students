@@ -10,6 +10,7 @@ import os
 class Standard(models.Model):
     name = models.CharField(max_length=100, unique=True)
     slug = models.SlugField(null=True, blank=True)
+    # branch = models.ForeignKey(Branch, on_delete=models.CASCADE)
     description = models.TextField(max_length=500, blank=True)
 
     def __str__(self):
